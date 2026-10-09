@@ -28,7 +28,7 @@
                     "url": "https://warwick.ac.uk/services/exampapers/cs/2023/cs1180_a_exam_paper.pdf"
                 }
             ],
-            "external-resources": [
+            "external_resources": [
                 {
                     "name": "Code Academy",
                     "url": "https://www.codecademy.com/learn/learn-java",

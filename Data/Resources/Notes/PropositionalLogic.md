@@ -73,6 +73,11 @@ $p \lor q$ is true when at least one of $p$ or $q$ is true.
 | F | T | T |
 | F | F | F |
 
+>[!tip]- Remembering Conjunction and Disjunction
+> I like to remember Conjunction (AND) by the fact "conjoin" means to combine two things together - so both things must be true!
+>
+> I remember Disjunction (OR) as "dis" meaning "not" or "apart", so I think of disjunction as two different options - either could be true (or both at the same time)!
+
 ### Implies (Implication)
 
 $p \rightarrow q$ is false only when $p$ is true and $q$ is false. In every other case it's true.

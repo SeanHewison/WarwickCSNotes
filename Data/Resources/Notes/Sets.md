@@ -1,12 +1,12 @@
 A set is a thing which contains things, and it only keeps track of whether a thing is in it or not. It doesn't have an idea of how many of each thing is in it - just whether the thing is in it or not. For instance, a set:
 
-$\{Coke, Pepsi\}$
+$\{\text{Coke}, \text{Pepsi}\}$
 
 *(sets are typically wrapped in curly braces $\{\}$)*   
 
 Since sets only keep track of whether a thing is in it or not, duplicates don't make sense. That is:
 
-$\{Coke, Coke, Pepsi\} = \{Coke, Pepsi\} = \{Coke, Coke, Coke, Pepsi, Pepsi\}$.
+$\{\text{Coke}, \text{Coke}, \text{Pepsi}\} = \{\text{Coke}, \text{Pepsi}\} = \{\text{Coke}, \text{Coke}, \text{Coke}, \text{Pepsi}, \text{Pepsi}\}$.
 
 More formally (though not a proper mathematical definition): A set is a mathematical object with a notion of membership i.e. whether something is in it or not. Sets do not have a notion of counting.
 
@@ -21,7 +21,7 @@ More formally (though not a proper mathematical definition): A set is a mathemat
 
 We can interact with a set $S$ by asking whether an element $a$ is in the set, written $a \in S$ (and $a \notin S$ for "$a$ is not in $S$").
 
-- For example, let $A = \{1, banana, ⭐\}$
+- For example, let $A = \{1, \text{banana}, ⭐\}$
 - $1 \in A$? True.
 - $2 \in A$? False.
 
@@ -29,7 +29,7 @@ We can interact with a set $S$ by asking whether an element $a$ is in the set, w
 
 The **cardinality** of a set $S$, written $|S|$, is the number of (distinct) elements in $S$.
 
-- $|\{1, banana, ⭐\}| = 3$
+- $|\{1, \text{banana}, ⭐\}| = 3$
 - $|\{1, 1, 2, 2, 3, 4\}| = 4$ (duplicates aren't "extra elements", a set contains each value at most once)
 - $|\emptyset| = 0$ (the empty set has no elements)
 

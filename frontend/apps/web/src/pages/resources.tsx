@@ -14,9 +14,17 @@ type InternalGuide = {
   name: string
   to: string
   description: string
+  unfinished?: boolean
 }
 
 const GUIDES: InternalGuide[] = [
+  {
+    name: "Reading Notes",
+    to: "/resources/reading-notes",
+    description:
+      "How to get the most out of the notes on this site, and how to fit other resources around them.",
+    unfinished: true,
+  },
   {
     name: "Open Source Contributions",
     to: "/resources/open-source-contributions",

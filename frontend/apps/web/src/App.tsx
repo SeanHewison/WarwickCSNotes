@@ -39,6 +39,11 @@ const OpenSourceContributionsPage = lazy(() =>
     default: m.OpenSourceContributionsPage,
   })),
 )
+const ReadingNotesPage = lazy(() =>
+  import("./pages/reading-notes").then((m) => ({
+    default: m.ReadingNotesPage,
+  })),
+)
 const HowToContributePage = lazy(() =>
   import("./pages/how-to-contribute").then((m) => ({
     default: m.HowToContributePage,
@@ -123,6 +128,7 @@ export function App() {
             <Route path="/careers/getting-experience" element={<GettingExperiencePage />} />
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/resources/open-source-contributions" element={<OpenSourceContributionsPage />} />
+            <Route path="/resources/reading-notes" element={<ReadingNotesPage />} />
             <Route path="/resources/how-to-contribute" element={<HowToContributePage />} />
             <Route path="/careers/internships" element={<InternshipsPage />} />
             <Route path="/careers/graduate-roles" element={<GraduateRolesPage />} />

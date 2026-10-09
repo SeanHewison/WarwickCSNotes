@@ -95,4 +95,7 @@ To deploy via Portainer UWCS:
 
 ## More Info
 
-Go to **Docs.md** for more detailed information about the project and its design decisions.
+- **CONVENTIONS.md** - terse lookup reference for the recurring patterns: callout
+  types, badges, the `year<N>.json` schema, resource URLs, adding a page. Start
+  here if you (or an LLM) just need to know how something is done.
+- **Docs.md** - detailed information about the project and its design decisions.

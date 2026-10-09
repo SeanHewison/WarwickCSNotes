@@ -1,6 +1,8 @@
 # Documentation
 
-Docs.
+Design decisions and the reasoning behind them. For the *what* rather than the
+*why* - callout types, badges, the `year<N>.json` schema, resource URLs - see
+`CONVENTIONS.md`, which is deliberately short.
 
 ## What are we allowed to host?
 

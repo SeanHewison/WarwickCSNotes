@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink } from "lucide-react"
+import { ArrowRight, Construction, ExternalLink } from "lucide-react"
 import { SurfaceAnchor, SurfaceLink } from "@/components/surface"
 
 export type LinkCardItem = {
@@ -15,6 +15,10 @@ export type GuideCardItem = {
   /** Footer wording. Defaults to "Read guide", which is wrong for anything
    *  that isn't one — a year of modules is browsed, not read. */
   action?: string
+  /** Still being written. Flags it on the card so the half-empty page isn't a
+   *  surprise once you've clicked through. Mirrors the amber `Construction`
+   *  badge the module page puts on unfinished notes. */
+  unfinished?: boolean
 }
 
 /** "https://the-trackr.com/trackers/" -> "the-trackr.com". Shown on the card so
@@ -81,6 +85,15 @@ export function GuideCard({ guide }: { guide: GuideCardItem }) {
       <span className={`${footerClass} font-semibold text-primary`}>
         {guide.action ?? "Read guide"}
         <ArrowRight className="h-3 w-3 shrink-0" />
+        {guide.unfinished && (
+          <span
+            className="ml-auto inline-flex items-center gap-1 text-amber-500"
+            title="This guide is still being worked on"
+          >
+            <Construction className="h-3 w-3 shrink-0" aria-hidden="true" />
+            In construction
+          </span>
+        )}
       </span>
     </SurfaceLink>
   )

@@ -8,6 +8,10 @@ If you submit a successful edit contribution to the project (so a PR usually), y
 
 **Note:** There is a section in `Docs.md` for what we're allowed to host.
 
+**Looking for the exact syntax for something?** `CONVENTIONS.md` is the quick
+reference: callout types, badges, the `year<N>.json` schema, resource URLs, and
+how to add a page.
+
 ## Reporting Issues
 
 If you've spotted a bug or want to flag a mistake in a note:
