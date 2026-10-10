@@ -95,6 +95,86 @@ The pipeline is opt-in by file extension: any ` ```tikz ` fenced block in a `.md
 
 4. **(Optional) Clean orphans.** Editing an existing block changes the hash, leaving the old SVG behind as an orphan. To prune, run `npm run tikz:clean && npm run tikz`. That dumps the whole cache and regenerates only what's still referenced by the current markdown.
 
+### Diagram styles: what the preamble gives you, and what it doesn't
+
+The preamble (`frontend/apps/web/src/tikz-preamble.tex`) is tuned for **automata**: it
+defines `state`, `accepting`, `initial`, and sets `every edge` to `draw, ->, >=stealth', auto, semithick`.
+That last one is the thing to know about, because it bites on anything that isn't an automaton:
+
+- `\path (a) edge (b);` uses the `edge` path operation, so it picks up `every edge` and
+  **gets an arrowhead**.
+- `\draw (a) -- (b);` is a plain line operation, so it does **not**. Undirected graphs
+  should use `--`.
+
+For a directed edge outside the automata styles, be explicit: `\draw[->, >=stealth', semithick] (a) -- (b);`.
+
+**Theming is colour-driven, so the colours aren't free choices.** `themeSvg()` rewrites
+specific colour literals into CSS hooks, and anything else is left as a hardcoded colour
+that will not follow the light/dark theme:
+
+| TikZ colour | dvisvgm emits | Becomes |
+|---|---|---|
+| default black stroke/text | `#000` | `currentColor` (follows the theme's foreground) |
+| `fill=gray!10` | `#f2f2f2` | `var(--tikz-fill, #f3f3f3)` |
+| anything else | that colour | left alone — **will not theme** |
+
+So node interiors must be `gray!10`, and strokes/labels must be left black.
+
+#### Graphs (`K_4` and friends)
+
+There is no `vertex` style in the preamble. Graph diagrams declare one in the picture's
+own options, which is a single line and keeps the block self-contained:
+
+````markdown
+```tikz
+\begin{tikzpicture}[vertex/.style={circle, draw, semithick, fill=gray!10, minimum size=2em, inner sep=1pt, font=\small}]
+\node[vertex] (v1) at (0, 2.2) {$v_1$};
+\node[vertex] (v2) at (2.2, 2.2) {$v_2$};
+\draw (v1) -- (v2);
+\end{tikzpicture}
+```
+````
+
+See `Data/Resources/Notes/Graphs.md` for the worked examples (an example graph, a digraph
+with a self-loop via `to[loop below]`, and `K_4`).
+
+**Why inline rather than in the preamble.** The cache filename is
+`sha256(preamble + "\n" + tidied)`, so *any* edit to the preamble — including adding an
+unrelated style — changes every hash and orphans every cached SVG. At the time of writing
+that's 40+ diagrams to re-render and a correspondingly large diff of near-identical files.
+A per-picture style costs one line and invalidates nothing.
+
+If graph diagrams become common enough that the repetition hurts, promote `vertex` (and a
+`gedge` style for undirected edges) into the preamble. That is a deliberate, batched
+operation, not a drive-by edit:
+
+1. Add the styles to `tikz-preamble.tex` and bump the version comment at the top.
+2. `npm run tikz:clean && npm run tikz` from `frontend/apps/web/` — re-renders everything.
+3. Update the existing blocks to drop their inline style.
+4. Commit the markdown *and* the whole regenerated `Data/Resources/Images/tikz/` directory.
+
+Best done when the preamble needs bumping for another reason anyway, so the re-render is paid once.
+
+#### Previewing a diagram without running the whole pipeline
+
+`npm run tikz` only renders blocks whose hash is missing, which makes iterating on a block
+you're still writing awkward. To see a candidate quickly, compile it standalone with the
+same wrapper the pipeline uses and look at the PDF:
+
+```bash
+{ echo '\documentclass[tikz, border=4pt]{standalone}'
+  echo '\usepackage[utf8]{inputenc}'
+  echo '\usepackage{amsmath, amssymb}'
+  cat frontend/apps/web/src/tikz-preamble.tex
+  echo '\begin{document}'
+  cat my-block.tex            # just the \begin{tikzpicture}...\end{tikzpicture}
+  echo '\end{document}'
+} > probe.tex && pdflatex -interaction=nonstopmode -halt-on-error probe.tex
+```
+
+`dvipng` is **not** a good substitute here — it ignores `standalone`'s cropped page and
+produces a near-empty image. Use the PDF, or run the real `latex` → `dvisvgm` path.
+
 ### What the SVGs ship with
 
 The render script post-processes each SVG so it themes correctly when inlined in the page:

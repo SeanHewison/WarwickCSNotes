@@ -328,6 +328,16 @@
             "assessments": [],
             "exercise_solutions": []
         },
+        "CS352": {
+            "tagline": "Business school, but harder",
+            "name": "Project Management for Computer Scientists",
+            "Term": "1",
+            "CATS": "15",
+            "authors": [],
+            "notes": [],
+            "past_papers": [],
+            "exercise_solutions": []
+        },
         "CS355": {
             "tagline": "Image things",
             "name": "Digital Forensics",
@@ -450,6 +460,16 @@
                     "url": "/quizzes/cs356-duality-of-linear-programs"
                 }
             ]
+        },
+        "CS357": {
+            "tagline": "Essays in a CS degree",
+            "name": "Responsible Computing",
+            "Term": "1",
+            "CATS": "15",
+            "authors": [],
+            "notes": [],
+            "past_papers": [],
+            "exercise_solutions": []
         }
     }
 }

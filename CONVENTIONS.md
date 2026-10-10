@@ -79,6 +79,37 @@ Gotchas:
   splits the cell.
 - Emoji in maths warn (no font metrics) but render.
 
+## TikZ diagrams
+
+` ```tikz ` blocks in any `Data/Resources/**` markdown are pre-rendered to SVG by
+`npm run tikz` (from `frontend/apps/web/`, needs `latex` + `dvisvgm` on PATH).
+Commit the markdown **and** the generated `Data/Resources/Images/tikz/<hash>.svg`.
+
+| Need | Write |
+|---|---|
+| Automaton state | `\node[state] (q0) {...};` — `state`/`accepting`/`initial` are in the preamble. |
+| Graph vertex | No preamble style. Declare it per picture (see below). |
+| Undirected edge | `\draw (a) -- (b);` |
+| Directed edge | `\draw[->, >=stealth', semithick] (a) -- (b);` |
+| Self-loop | `\draw[->, >=stealth', semithick] (a) to[loop below] (a);` |
+
+Graph picture header, copy verbatim:
+
+```latex
+\begin{tikzpicture}[vertex/.style={circle, draw, semithick, fill=gray!10, minimum size=2em, inner sep=1pt, font=\small}]
+```
+
+Rules that are easy to get wrong:
+
+- **Node fills must be `gray!10`**, strokes/text left black. `themeSvg()` only rewrites
+  those two into CSS variables; any other colour is hardcoded and won't follow the theme.
+- `\path ... edge ...` inherits `every edge` from the preamble and **gets an arrowhead**;
+  `--` does not. Undirected graphs use `--`.
+- **Never edit `tikz-preamble.tex` casually** — it's part of the cache hash, so any change
+  orphans every cached SVG and forces a full re-render. See Docs.md.
+
+Worked examples: `Data/Resources/Notes/Graphs.md`.
+
 ## Badges
 
 Amber `Construction` = unfinished, green `BadgeCheck` = verified. Two places:
