@@ -1,0 +1,36 @@
+[
+    {
+        "Author": "John",
+        "AcademicYear": "2025",
+        "Reflection": [
+            [
+                "Teaching Quality",
+                "Sub-par but we had 3 different lecturers, since Rosella was on maternity leave."
+            ],
+            [
+                "Content",
+                "Found most of the content quite interesting, but only when engaging at my own pace."
+            ],
+            [
+                "Workload & Structure",
+                "Not the worst, but also not the best. Structure makes sense, but does repeat some stuff from cs132/241."
+            ],
+            [
+                "Assessment",
+                "The coursework is heavily AI-able (a record number of people *hand write assembly*. My year is not that smart), leading to them seemingly raising the bar for performance tiers. The exam was fine, but given our lecturers won't be representative."
+            ],
+            [
+                "Enjoyment",
+                "Any enjoyment I found from this module was found from random YouTube/Wikipedia rabbitholes, not the lectures themselves."
+            ],
+            [
+                "Who Should Take It",
+                "If you like low-level stuff."
+            ]
+        ],
+        "Ratings": {
+            "overall": 50,
+            "difficulty": 75
+        }
+    }
+]

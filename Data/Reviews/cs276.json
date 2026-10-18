@@ -1,0 +1,36 @@
+[
+    {
+        "Author": "John",
+        "AcademicYear": "2025",
+        "Reflection": [
+            [
+                "Content",
+                "Relevant to learning basic game-dev principles."
+            ],
+            [
+                "Workload & Structure",
+                "Well balanced. Since it's a group project, your group will be the main thing affecting your workload."
+            ],
+            [
+                "Assessment",
+                "No exam. Assessment is fair, though may take a while if theres still just 1 TA."
+            ],
+            [
+                "Enjoyment",
+                "Alex's lectures are entertaining, though as someone who had done a lot of game dev beforehand, there wasn't much new content (this will vary person-to-person)."
+            ],
+            [
+                "Who Should Take It",
+                "If you've done game dev before/want to get into it. The things you cover are about game development in Godot/general game dev theory (juice, player experience, etc)."
+            ],
+            [
+                "Tips",
+                "Learn GDscript early, and look into some higher-level concepts (namely Callables/signals in GDscript) that can let you do some nifty stuff (e.g. generic object/particle pooling). Also get a good team </3"
+            ]
+        ],
+        "Ratings": {
+            "overall": 80,
+            "difficulty": 45
+        }
+    }
+]
