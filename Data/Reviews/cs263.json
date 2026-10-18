@@ -1,0 +1,36 @@
+[
+    {
+        "Author": "John",
+        "AcademicYear": "2025",
+        "Reflection": [
+            [
+                "Content",
+                "Wide as an ocean, deep as a puddle. Heavily flashcard-able, but some parts do just feel like random trivia. It can be hard to tell what will/won't come up in an exam"
+            ],
+            [
+                "Workload & Structure",
+                "Fine - the coursework is split into 3 parts, and you can relatively easily get a decent mark. The labs are kind of optional, and can be supplimented with flashcards."
+            ],
+            [
+                "Assessment",
+                "Exam was my best by far in 2nd year. If you did cs140 and keep up with cyber-security news/are aware of good security practices in your own time you will likely do exceptionally well."
+            ],
+            [
+                "Enjoyment",
+                "Some parts are somewhat interesting, but you won't stay on them long enough to do anything with the information."
+            ],
+            [
+                "Tips",
+                "Keep up to date with cyber-sec news/read up on general security practices. This is easy to do if you have a personal project that can be hardened in some way (e.g. improving how you handle passwords). If you go this route, don't use AI, do the research yourself to justify the choices made."
+            ],
+            [
+                "Who Should Take It",
+                "If you're vaguely interested/have prior knowledge in the field/want an easier module. I wouldn't say it alone is sufficient to do anything cool with."
+            ]
+        ],
+        "Ratings": {
+            "overall": 55,
+            "difficulty": 60
+        }
+    }
+]

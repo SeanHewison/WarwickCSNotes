@@ -375,7 +375,9 @@
             "name": "Software Engineering",
             "Term": "2",
             "CATS": "15",
-            "authors": ["CrystalNg"],
+            "authors": [
+                "CrystalNg"
+            ],
             "notes": [
                 {
                     "title": "GET ME OUT OF HERE",
@@ -461,6 +463,60 @@
                     "title": "Centrally-timetabled examination (On-campus)",
                     "submission_deadline": "2026-06-17 2:00 PM",
                     "weighting": 75,
+                    "eligible_for_self_certification": false
+                }
+            ],
+            "exercise_solutions": []
+        },
+        "CS276": {
+            "tagline": "Game game jam jam",
+            "name": "Principles of Video Game Development",
+            "Term": "1",
+            "CATS": "15",
+            "authors": [],
+            "notes": [],
+            "past_papers": [],
+            "assessments": [
+                {
+                    "title": "Coursework 1 - Game Design Document & Prototype",
+                    "submission_deadline": "2026-10-30 12:00 PM",
+                    "weighting": 30,
+                    "eligible_for_self_certification": false
+                },
+                {
+                    "title": "Coursework 2 - final game",
+                    "submission_deadline": "2025-12-11 12:00 PM",
+                    "weighting": 0,
+                    "eligible_for_self_certification": false
+                },
+                {
+                    "title": "Final report",
+                    "submission_deadline": "2026-01-11 12:00 PM",
+                    "weighting": 70,
+                    "eligible_for_self_certification": false
+                }
+            ],
+            "exercise_solutions": []
+        },
+        "CS263": {
+            "tagline": "I'm securing it, I'm securing it",
+            "name": "Cyber Security",
+            "Term": "1",
+            "CATS": "15",
+            "authors": [],
+            "notes": [],
+            "past_papers": [],
+            "assessments": [
+                {
+                    "title": "Coursework",
+                    "submission_deadline": "2026-12-02 12:00 PM",
+                    "weighting": 30,
+                    "eligible_for_self_certification": false
+                },
+                {
+                    "title": "Centrally-timetabled examination (On-campus)",
+                    "submission_deadline": "2026-06-17 2:00 PM",
+                    "weighting": 70,
                     "eligible_for_self_certification": false
                 }
             ],
